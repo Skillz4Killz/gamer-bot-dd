@@ -1,6 +1,11 @@
 {
   "name": "gamer-bot-dd",
-  "packageManager": "yarn@3.3.0",
+  "packageManager": "yarn@3.3.1",
+  "scripts": {
+    "tsc": "tsc --watch",
+    "build": "tsc",
+    "dev": "ts-node src/index"
+  },
   "dependencies": {
     "@discordeno/rest": "19.0.0-next.024fbe3",
     "typescript": "^4.9.4"
