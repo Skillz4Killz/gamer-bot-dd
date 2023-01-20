@@ -1,0 +1,7 @@
+{
+  "name": "gamer-bot-dd",
+  "packageManager": "yarn@3.3.0",
+  "dependencies": {
+    "@discordeno/rest": "19.0.0-next.024fbe3"
+  }
+}
