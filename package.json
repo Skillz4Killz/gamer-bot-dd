@@ -4,10 +4,11 @@
   "scripts": {
     "tsc": "tsc --watch",
     "build": "tsc",
-    "dev": "ts-node src/index"
+    "dev": "node dist"
   },
+  "type": "module",
   "dependencies": {
-    "@discordeno/rest": "19.0.0-next.024fbe3",
+    "@discordeno/rest": "19.0.0-next.17df478",
     "typescript": "^4.9.4"
   }
 }
