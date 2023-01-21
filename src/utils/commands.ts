@@ -1,7 +1,8 @@
 import { ApplicationCommandTypes, ApplicationCommandOption, BigString } from '@discordeno/types'
-import { Gamer } from '../bot'
-import { commands } from '../commands'
-import { ArgumentDefinition } from '../typings/commands'
+import type { ArgumentDefinition } from '../types/commands'
+
+import { Gamer } from '../bot.js'
+import { commands } from '../commands/index.js'
 import { serverLanguages, translate } from './translate.js'
 
 export async function updateDevCommands() {
@@ -54,6 +55,8 @@ export async function updateDevCommands() {
   // .filter(([_name, command]) => command?.dev)
 
   if (!cmds.length) return
+
+  console.log('UPDATING DEV COMMANDS')
 
   // DEV RELATED COMMANDS
   await Gamer.rest.upsertGuildApplicationCommands(

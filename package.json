@@ -8,7 +8,10 @@
   },
   "type": "module",
   "dependencies": {
+    "@discordeno/gateway": "19.0.0-next.17df478",
     "@discordeno/rest": "19.0.0-next.17df478",
-    "typescript": "^4.9.4"
+    "isomorphic-ws": "^5.0.0",
+    "typescript": "^4.9.4",
+    "ws": "^8.12.0"
   }
 }

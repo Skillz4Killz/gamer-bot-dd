@@ -5,6 +5,17 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@discordeno/gateway@npm:19.0.0-next.17df478":
+  version: 19.0.0-next.17df478
+  resolution: "@discordeno/gateway@npm:19.0.0-next.17df478"
+  dependencies:
+    "@discordeno/types": 19.0.0-next.17df478
+    "@discordeno/utils": 19.0.0-next.17df478
+    ws: ^8.11.0
+  checksum: 2b82b04ce66c5748a93f0872c928ddc6e3eb8179072453b98c5885a71ab49c99ffbc66df0181453b015ade1581ecbcde6eac2af814e99affb87e3702417fa9c5
+  languageName: node
+  linkType: hard
+
 "@discordeno/rest@npm:19.0.0-next.17df478":
   version: 19.0.0-next.17df478
   resolution: "@discordeno/rest@npm:19.0.0-next.17df478"
@@ -53,10 +64,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gamer-bot-dd@workspace:."
   dependencies:
+    "@discordeno/gateway": 19.0.0-next.17df478
     "@discordeno/rest": 19.0.0-next.17df478
+    isomorphic-ws: ^5.0.0
     typescript: ^4.9.4
+    ws: ^8.12.0
   languageName: unknown
   linkType: soft
+
+"isomorphic-ws@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "isomorphic-ws@npm:5.0.0"
+  peerDependencies:
+    ws: "*"
+  checksum: e20eb2aee09ba96247465fda40c6d22c1153394c0144fa34fe6609f341af4c8c564f60ea3ba762335a7a9c306809349f9b863c8beedf2beea09b299834ad5398
+  languageName: node
+  linkType: hard
 
 "tweetnacl@npm:^1.0.3":
   version: 1.0.3
@@ -82,5 +105,20 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 1caaea6cb7f813e64345190fddc4e6c924d0b698ab81189b503763c4a18f7f5501c69362979d36e19c042d89d936443e768a78b0675690b35eb663d19e0eae71
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.11.0, ws@npm:^8.12.0":
+  version: 8.12.0
+  resolution: "ws@npm:8.12.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 818ff3f8749c172a95a114cceb8b89cedd27e43a82d65c7ad0f7882b1e96a2ee6709e3746a903c3fa88beec0c8bae9a9fcd75f20858b32a166dfb7519316a5d7
   languageName: node
   linkType: hard

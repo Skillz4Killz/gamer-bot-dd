@@ -1,4 +1,4 @@
-import { BOT_SERVER_INVITE_CODE } from "../utils/constants/bot"
+import { BOT_SERVER_INVITE_CODE } from "../utils/constants/bot.js"
 
 const english = {
   // COMMON STRINGS

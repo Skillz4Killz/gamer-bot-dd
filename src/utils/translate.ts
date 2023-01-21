@@ -1,14 +1,16 @@
+import { BigString } from '@discordeno/types'
+
 import { Gamer } from '../bot.js'
 import { MISSING_TRANSLATION_WEBHOOK } from '../configs.js'
-import languages from '../languages'
-import english from '../languages/english'
+import languages from '../languages/index.js'
+import english from '../languages/english.js'
 import { BOT_DEV_IDS } from './constants/bot.js'
 import { webhookURLToIDAndToken } from './hooks.js'
 
 /** This should hold the language names per guild id. <guildId, language> */
 export const serverLanguages = new Map<bigint, keyof typeof languages>()
 
-export function translate<K extends translationKeys>(guildIdOrLanguage: bigint | keyof typeof languages, key: K, ...params: getArgs<K>): string {
+export function translate<K extends translationKeys>(guildIdOrLanguage: BigString, key: K, ...params: getArgs<K>): string {
   const language = getLanguage(guildIdOrLanguage)
   let value: string | ((...any: any[]) => string) | string[] | undefined = languages[language]?.[key]
 
@@ -34,8 +36,8 @@ export function translate<K extends translationKeys>(guildIdOrLanguage: bigint |
 }
 
 /** Get the language this guild has set, will always return "english" if it is not in cache */
-export function getLanguage(guildIdOrLanguage: bigint | keyof typeof languages) {
-  return typeof guildIdOrLanguage === 'string' ? guildIdOrLanguage : serverLanguages.get(guildIdOrLanguage) ?? 'english'
+export function getLanguage(guildIdOrLanguage: BigString) {
+  return serverLanguages.get(BigInt(guildIdOrLanguage)) ?? 'english'
 }
 
 export async function loadLanguage(guildId: bigint) {
