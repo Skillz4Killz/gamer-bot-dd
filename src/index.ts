@@ -1,4 +1,4 @@
-import { Gamer } from './bot.js'
+import { client } from './bot.js'
 import { DEVELOPMENT } from './configs.js'
 import { updateDevCommands } from './utils/commands.js'
 
@@ -11,7 +11,8 @@ export async function testing() {
   }
 
   console.log('[Gateway] Starting gateway')
-  await Gamer.gateway.spawnShards()
+  await client.connect()
+  // await Gamer.gateway.spawnShards()
   console.log('[Gateway] Gateway started!')
   // console.log(test)
 }

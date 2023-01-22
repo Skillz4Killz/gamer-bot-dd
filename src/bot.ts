@@ -3,6 +3,7 @@
 import { DISCORD_TOKEN } from './configs.js'
 import { createRestManager } from './rest/manager.js'
 import { createGatewayManager } from './gateway/manager.js'
+import Client from './client/Client.js'
 
 export const Gamer = {
   // TODO: replace with logger
@@ -55,3 +56,5 @@ export const Gamer = {
     },
   }),
 }
+
+export const client = new Client(DISCORD_TOKEN, {}).on('ready', () => console.log('[Bot] is ready!'))
